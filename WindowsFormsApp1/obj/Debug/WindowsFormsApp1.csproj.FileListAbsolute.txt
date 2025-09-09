@@ -1,0 +1,17 @@
+V:\DBMS\English Academy\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+V:\DBMS\English Academy\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+V:\DBMS\English Academy\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+V:\DBMS\English Academy\WindowsFormsApp1\bin\Debug\Guna.UI2.dll
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.EnglishAcademy.resources
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form3.resources
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form4.resources
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form5.resources
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsF.A1EEDF9B.Up2Date
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+V:\DBMS\English Academy\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
