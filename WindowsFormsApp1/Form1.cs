@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.view;
 
 namespace WindowsFormsApp1
 {
@@ -28,7 +29,7 @@ namespace WindowsFormsApp1
             panelMain.Controls.Clear();
 
             // Khởi tạo form2
-            Form2 frm = new Form2();
+            StudentView frm = new StudentView();
             frm.TopLevel = false;              // Quan trọng: không cho form chạy độc lập
             frm.FormBorderStyle = FormBorderStyle.None; // Bỏ viền
             frm.Dock = DockStyle.Fill;         // Fill toàn bộ panel
@@ -44,7 +45,7 @@ namespace WindowsFormsApp1
             panelMain.Controls.Clear();
 
             // Khởi tạo form2
-            Form3 frm = new Form3();
+            StaffView frm = new StaffView();
             frm.TopLevel = false;              // Quan trọng: không cho form chạy độc lập
             frm.FormBorderStyle = FormBorderStyle.None; // Bỏ viền
             frm.Dock = DockStyle.Fill;         // Fill toàn bộ panel
@@ -60,7 +61,7 @@ namespace WindowsFormsApp1
             panelMain.Controls.Clear();
 
             // Khởi tạo form2
-            Form4 frm = new Form4();
+            TeachingView frm = new TeachingView();
             frm.TopLevel = false;              // Quan trọng: không cho form chạy độc lập
             frm.FormBorderStyle = FormBorderStyle.None; // Bỏ viền
             frm.Dock = DockStyle.Fill;         // Fill toàn bộ panel
@@ -76,7 +77,7 @@ namespace WindowsFormsApp1
             panelMain.Controls.Clear();
 
             // Khởi tạo form2
-            Form5 frm = new Form5();
+            Equipment frm = new Equipment();
             frm.TopLevel = false;              // Quan trọng: không cho form chạy độc lập
             frm.FormBorderStyle = FormBorderStyle.None; // Bỏ viền
             frm.Dock = DockStyle.Fill;         // Fill toàn bộ panel

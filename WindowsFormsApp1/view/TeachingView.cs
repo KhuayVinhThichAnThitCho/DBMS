@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1.view
 {
-    public partial class Form5 : Form
+    public partial class TeachingView : Form
     {
-        public Form5()
+        public TeachingView()
         {
             InitializeComponent();
         }

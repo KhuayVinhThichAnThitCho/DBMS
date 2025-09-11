@@ -1,0 +1,44 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build Folders
+bin/
+obj/
+Debug/
+Release/
+
+# Rider IDE
+.idea/
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# NuGet packages
+*.nupkg
+packages/
+*.snupkg
+.nuget/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Temporary files
+*.tmp
+*.log
+*.cache
+
+# Others
+*.pdb
+*.ilk
+*.idb
+*.iobj
+*.ipdb
+*.tlog
+*.lastbuildstate
