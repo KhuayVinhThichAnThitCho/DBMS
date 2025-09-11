@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.view
+namespace WindowsFormsApp1.view.studentview
 {
-    public partial class StudentView : Form
+    public partial class Finance : Form
     {
-        public StudentView()
+        public Finance()
         {
             InitializeComponent();
         }

@@ -37,10 +37,10 @@
             this.btn_student = new Guna.UI2.WinForms.Guna2Button();
             this.btn_home = new Guna.UI2.WinForms.Guna2Button();
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.picBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
@@ -57,7 +57,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(204, 649);
+            this.guna2Panel1.Size = new System.Drawing.Size(254, 649);
             this.guna2Panel1.TabIndex = 0;
             // 
             // btn_equip
@@ -74,9 +74,9 @@
             this.btn_equip.ForeColor = System.Drawing.Color.White;
             this.btn_equip.Location = new System.Drawing.Point(23, 441);
             this.btn_equip.Name = "btn_equip";
-            this.btn_equip.Size = new System.Drawing.Size(158, 47);
+            this.btn_equip.Size = new System.Drawing.Size(208, 47);
             this.btn_equip.TabIndex = 4;
-            this.btn_equip.Text = "Equipment";
+            this.btn_equip.Text = "Quản lý thiết bị";
             this.btn_equip.Click += new System.EventHandler(this.btn_equip_Click);
             // 
             // btn_Ass
@@ -93,9 +93,9 @@
             this.btn_Ass.ForeColor = System.Drawing.Color.White;
             this.btn_Ass.Location = new System.Drawing.Point(23, 360);
             this.btn_Ass.Name = "btn_Ass";
-            this.btn_Ass.Size = new System.Drawing.Size(158, 47);
+            this.btn_Ass.Size = new System.Drawing.Size(221, 47);
             this.btn_Ass.TabIndex = 3;
-            this.btn_Ass.Text = "Assignment";
+            this.btn_Ass.Text = "Quản lý phân công";
             this.btn_Ass.Click += new System.EventHandler(this.btn_Ass_Click);
             // 
             // btn_teacher
@@ -112,9 +112,9 @@
             this.btn_teacher.ForeColor = System.Drawing.Color.White;
             this.btn_teacher.Location = new System.Drawing.Point(23, 279);
             this.btn_teacher.Name = "btn_teacher";
-            this.btn_teacher.Size = new System.Drawing.Size(158, 47);
+            this.btn_teacher.Size = new System.Drawing.Size(218, 47);
             this.btn_teacher.TabIndex = 2;
-            this.btn_teacher.Text = "Teacher";
+            this.btn_teacher.Text = "Quản lý nhân viên";
             this.btn_teacher.Click += new System.EventHandler(this.btn_teacher_Click);
             // 
             // btn_student
@@ -131,9 +131,9 @@
             this.btn_student.ForeColor = System.Drawing.Color.White;
             this.btn_student.Location = new System.Drawing.Point(23, 198);
             this.btn_student.Name = "btn_student";
-            this.btn_student.Size = new System.Drawing.Size(158, 47);
+            this.btn_student.Size = new System.Drawing.Size(208, 47);
             this.btn_student.TabIndex = 1;
-            this.btn_student.Text = "Student";
+            this.btn_student.Text = "Quản lý học viên";
             this.btn_student.Click += new System.EventHandler(this.btn_student_Click);
             // 
             // btn_home
@@ -150,7 +150,7 @@
             this.btn_home.ForeColor = System.Drawing.Color.White;
             this.btn_home.Location = new System.Drawing.Point(23, 117);
             this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(158, 47);
+            this.btn_home.Size = new System.Drawing.Size(208, 47);
             this.btn_home.TabIndex = 0;
             this.btn_home.Text = "Home";
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
@@ -163,10 +163,28 @@
             this.panelMain.Controls.Add(this.picBox);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.FillColor = System.Drawing.Color.White;
-            this.panelMain.Location = new System.Drawing.Point(204, 0);
+            this.panelMain.Location = new System.Drawing.Point(254, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(795, 649);
+            this.panelMain.Size = new System.Drawing.Size(745, 649);
             this.panelMain.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(133, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(532, 32);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "WHAT THE FUCK, WHO IS ADMIN???";
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(745, 60);
+            this.guna2Panel2.TabIndex = 1;
             // 
             // picBox
             // 
@@ -176,7 +194,7 @@
             this.picBox.ImageRotate = 0F;
             this.picBox.Location = new System.Drawing.Point(0, 0);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(795, 649);
+            this.picBox.Size = new System.Drawing.Size(745, 649);
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox.TabIndex = 0;
             this.picBox.TabStop = false;
@@ -185,24 +203,6 @@
             // 
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(795, 60);
-            this.guna2Panel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(133, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(455, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "WHAT THE FUCK, WHO IS ADMIN???";
             // 
             // EnglishAcademy
             // 

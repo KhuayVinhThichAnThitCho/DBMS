@@ -52,14 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="data\DBConnection.cs" />
+    <Compile Include="data\StudentDAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="service\StudentService.cs" />
     <Compile Include="view\Equipment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,10 +76,40 @@
     <Compile Include="view\StaffView.Designer.cs">
       <DependentUpon>StaffView.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\StudentView.cs">
+    <Compile Include="view\studentview\CoursesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\StudentView.Designer.cs">
+    <Compile Include="view\studentview\CoursesForm.Designer.cs">
+      <DependentUpon>CoursesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\studentview\EnrollmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\studentview\EnrollmentForm.Designer.cs">
+      <DependentUpon>EnrollmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\studentview\Finance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\studentview\Finance.Designer.cs">
+      <DependentUpon>Finance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\studentview\LearningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\studentview\LearningForm.Designer.cs">
+      <DependentUpon>LearningForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\studentview\StudentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\studentview\StudentsForm.Designer.cs">
+      <DependentUpon>StudentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\studentview\StudentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\studentview\StudentView.Designer.cs">
       <DependentUpon>StudentView.cs</DependentUpon>
     </Compile>
     <Compile Include="view\TeachingView.cs">
@@ -96,6 +130,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\studentview\CoursesForm.resx">
+      <DependentUpon>CoursesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\studentview\StudentsForm.resx">
+      <DependentUpon>StudentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\studentview\StudentView.resx">
+      <DependentUpon>StudentView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -110,10 +153,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="data\" />
-    <Folder Include="model\" />
-    <Folder Include="service\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
