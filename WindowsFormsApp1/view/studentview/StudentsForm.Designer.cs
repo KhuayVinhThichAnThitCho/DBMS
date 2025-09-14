@@ -53,6 +53,7 @@
             this.create_button.TabIndex = 1;
             this.create_button.Text = "thêm";
             this.create_button.UseVisualStyleBackColor = true;
+            this.create_button.Click += new System.EventHandler(this.create_button_Click);
             // 
             // update_button
             // 
@@ -62,6 +63,7 @@
             this.update_button.TabIndex = 2;
             this.update_button.Text = "sửa";
             this.update_button.UseVisualStyleBackColor = true;
+            this.update_button.Click += new System.EventHandler(this.update_button_Click);
             // 
             // delete_button
             // 
@@ -71,6 +73,7 @@
             this.delete_button.TabIndex = 3;
             this.delete_button.Text = "xóa";
             this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
             // 
             // StudentsForm
             // 
