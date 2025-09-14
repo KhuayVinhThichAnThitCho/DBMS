@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.enumerate
 {
-    internal class StudentStatus
+    public enum StudentStatus
     {
+        Prospect,
+        Active,
+        Inactive,
+        Graduated
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.enumerate
 {
-    internal class ClassStatus
+    public enum ClassStatus
     {
+        Planned,
+        Open,
+        Active,
+        Completed,
+        Cancelled
     }
 }

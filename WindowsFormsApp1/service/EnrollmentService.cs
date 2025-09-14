@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1.enumerate
+namespace WindowsFormsApp1.service
 {
-    public enum AttendanceStatus
+    public class EnrollmentService
     {
-        Present,
-        Absent,
-        Late,
-        Excused
+
     }
 }

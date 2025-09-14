@@ -33,3 +33,6 @@ D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.StudentView.
 D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.EnrollmentForm.resources
 D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.Finance.resources
 D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.LearningForm.resources
+D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.ClassForm.resources
+D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.AvailableClassForm.resources
+D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.StudentRegisterClassForm.resources

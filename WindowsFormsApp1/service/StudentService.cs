@@ -15,5 +15,9 @@ namespace WindowsFormsApp1.service
         {
             return studentDAO.GetStudents();
         }
+        public Student getStudentByPhone(String phone)
+        {
+            return studentDAO.findStudentByPhone(phone);
+        }
     }
 }

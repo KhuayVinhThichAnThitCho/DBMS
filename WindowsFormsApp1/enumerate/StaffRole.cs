@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.enumerate
 {
-    internal class StaffRole
+    public enum StaffRole
     {
+        Teacher,
+        Assistant,
+        Counselor,
+        Admin
     }
 }

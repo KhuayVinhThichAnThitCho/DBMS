@@ -1,92 +1,39 @@
 ﻿using System;
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WindowsFormsApp1.model
 {
     public class Student
     {
-        private Guid id = Guid.NewGuid();
-        private string studentCode;
-        private string fullName;
-        private string phone;
-        private string email;
-        private string currentLevel = "Beginner";
-        private string status = "Prospect";
-        private DateTime createdAt = DateTime.Now;
-        private DateTime updatedAt = DateTime.Now;
+        public Guid Id { get; set; } = Guid.NewGuid();
 
-        // Getter & Setter
-        public Guid Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        [Required, StringLength(20)]
+        public string StudentCode { get; set; }
 
-        public string StudentCode
-        {
-            get { return studentCode; }
-            set { studentCode = value; }
-        }
+        [Required, StringLength(100)]
+        public string FullName { get; set; }
 
-        public string FullName
-        {
-            get { return fullName; }
-            set { fullName = value; }
-        }
+        [StringLength(15)]
+        public string Phone { get; set; }
 
-        public string Phone
-        {
-            get { return phone; }
-            set { phone = value; }
-        }
+        [StringLength(100)]
+        public string Email { get; set; }
 
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
+        [StringLength(20)]
+        public string CurrentLevel { get; set; } // Beginner, Elementary, Intermediate, Advanced
 
-        public string CurrentLevel
-        {
-            get { return currentLevel; }
-            set { currentLevel = value; }
-        }
+        [StringLength(20)]
+        public string Status { get; set; } = "Prospect"; // Prospect, Active, Inactive, Graduated
 
-        public string Status
-        {
-            get { return status; }
-            set { status = value; }
-        }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
-        public DateTime CreatedAt
-        {
-            get { return createdAt; }
-            set { createdAt = value; }
-        }
-
-        public DateTime UpdatedAt
-        {
-            get { return updatedAt; }
-            set { updatedAt = value; }
-        }
-
-        // Default constructor
-        public Student() { }
-
-        // Constructor with parameters
-        public Student(string studentCode, string fullName, string phone = null, string email = null, string currentLevel = "Beginner", string status = "Prospect")
-        {
-            StudentCode = studentCode;
-            FullName = fullName;
-            Phone = phone;
-            Email = email;
-            CurrentLevel = currentLevel;
-            Status = status;
-        }
-
-        
+        // Navigation properties
+        public virtual ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
+        public virtual ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
+        public virtual ICollection<Assessment> Assessments { get; set; } = new List<Assessment>();
     }
 }

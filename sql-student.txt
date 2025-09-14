@@ -1,0 +1,74 @@
+// xem toan bo khoa hoc
+CREATE VIEW vw_Courses AS
+SELECT 
+    id, 
+    course_code, 
+    course_name, 
+    level, 
+    duration_sessions, 
+    base_fee, 
+    created_at
+FROM courses;
+
+// find course by id
+
+Create PROCEDURE sp_FindClassByCourseCode
+    @CourseCode NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        c.id AS class_id,
+        c.class_code,
+        c.course_id,
+        c.teacher_id,
+        c.room_id,
+	c.current_capacity ,
+        c.max_capacity,
+        c.schedule,
+        c.start_date,
+        c.end_date,
+        c.status,
+        c.created_at AS class_created_at
+    FROM classes c
+    WHERE c.course_id = @CourseCode
+    ORDER BY c.class_code;
+END;
+
+
+-- find avaialbel class
+-- find avaialbel class
+Create PROCEDURE sp_FindAvailableByCourseCode
+    @CourseCode NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        c.id AS class_id,
+        c.class_code,
+        c.course_id,
+        c.teacher_id,
+        c.room_id,
+        c.current_capacity ,
+        c.max_capacity,
+        c.schedule,
+        c.start_date,
+        c.end_date,
+        c.status,
+        c.created_at AS class_created_at
+    FROM classes c
+    WHERE c.course_id = @CourseCode and c.current_capacity < c.max_capacity 
+    ORDER BY c.class_code;
+END;
+
+// find student by phone
+Create PROCEDURE sp_FindStudentByPhone
+    @phone NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+	select s.id,s.student_code,s.full_name,s.phone,s.email,s.current_level from students s
+	where s.phone = @phone
+END;

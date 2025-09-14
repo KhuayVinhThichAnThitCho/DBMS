@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.view.studentview
 {
-    partial class CoursesForm
+    partial class AvailableClassForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,72 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.delete_button = new System.Windows.Forms.Button();
-            this.update_button = new System.Windows.Forms.Button();
-            this.create_button = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // delete_button
-            // 
-            this.delete_button.Location = new System.Drawing.Point(285, 71);
-            this.delete_button.Name = "delete_button";
-            this.delete_button.Size = new System.Drawing.Size(96, 39);
-            this.delete_button.TabIndex = 7;
-            this.delete_button.Text = "xóa";
-            this.delete_button.UseVisualStyleBackColor = true;
-            // 
-            // update_button
-            // 
-            this.update_button.Location = new System.Drawing.Point(161, 71);
-            this.update_button.Name = "update_button";
-            this.update_button.Size = new System.Drawing.Size(96, 39);
-            this.update_button.TabIndex = 6;
-            this.update_button.Text = "sửa";
-            this.update_button.UseVisualStyleBackColor = true;
-            // 
-            // create_button
-            // 
-            this.create_button.Location = new System.Drawing.Point(37, 71);
-            this.create_button.Name = "create_button";
-            this.create_button.Size = new System.Drawing.Size(96, 39);
-            this.create_button.TabIndex = 5;
-            this.create_button.Text = "thêm";
-            this.create_button.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 131);
+            this.dataGridView1.Location = new System.Drawing.Point(52, 92);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1012, 625);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // CoursesForm
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(59, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 20);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Danh sach lop trong";
+            // 
+            // AvailableClassForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 860);
-            this.Controls.Add(this.delete_button);
-            this.Controls.Add(this.update_button);
-            this.Controls.Add(this.create_button);
+            this.ClientSize = new System.Drawing.Size(1147, 820);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "CoursesForm";
-            this.Text = "CoursesForm";
+            this.Name = "AvailableClassForm";
+            this.Text = "AvailableClassForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button delete_button;
-        private System.Windows.Forms.Button update_button;
-        private System.Windows.Forms.Button create_button;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
     }
 }

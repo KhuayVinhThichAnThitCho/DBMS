@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.enumerate
 {
-    internal class EmploymentType
+    public enum EmploymentType
     {
+        FullTime,
+        PartTime,
+        Freelancer
     }
 }
