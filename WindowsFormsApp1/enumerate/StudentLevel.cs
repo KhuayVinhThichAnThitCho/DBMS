@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.model
 {
-    internal class StudentLevel
+    public enum StudentLevel
     {
+        Beginner,
+        Elementary,
+        Intermediate,
+        Advanced
     }
 }

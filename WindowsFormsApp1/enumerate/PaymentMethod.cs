@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.enumerate
 {
-    internal class PaymentMethod
+    public enum PaymentMethod
     {
+        Cash,
+        Transfer,
+        Card,
+        QR
     }
 }
