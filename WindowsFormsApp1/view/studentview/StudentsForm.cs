@@ -50,5 +50,20 @@ namespace WindowsFormsApp1.view.studentview
                 MessageBox.Show("Error loading students: " + ex.Message);
             }
         }
+
+        private void create_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void update_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delete_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
