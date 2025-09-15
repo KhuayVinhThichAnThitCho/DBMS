@@ -56,6 +56,7 @@
     <Compile Include="data\ClassDAO.cs" />
     <Compile Include="data\CourseDAO.cs" />
     <Compile Include="data\DBConnection.cs" />
+    <Compile Include="data\EnrollmentDAO.cs" />
     <Compile Include="data\StudentDAO.cs" />
     <Compile Include="enumerate\AttendanceStatus.cs" />
     <Compile Include="enumerate\ClassStatus.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="service\ClassService.cs" />
     <Compile Include="service\CourseService.cs" />
+    <Compile Include="service\EnrollmentService.cs" />
     <Compile Include="service\StudentService.cs" />
     <Compile Include="view\Equipment.cs">
       <SubType>Form</SubType>

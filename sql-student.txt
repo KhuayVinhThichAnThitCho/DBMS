@@ -72,3 +72,166 @@ BEGIN
 	select s.id,s.student_code,s.full_name,s.phone,s.email,s.current_level from students s
 	where s.phone = @phone
 END;
+
+
+// check level
+CREATE FUNCTION fn_IsStudentEligible
+(
+    @ClassId UNIQUEIDENTIFIER,
+    @StudentId UNIQUEIDENTIFIER
+)
+RETURNS BIT
+AS
+BEGIN
+    DECLARE @StudentLevel VARCHAR(50);
+    DECLARE @CourseLevel VARCHAR(50);
+    DECLARE @StudentLevelValue INT;
+    DECLARE @CourseLevelValue INT;
+    DECLARE @Result BIT;
+
+    -- Get course level
+    SELECT @CourseLevel = co.[level]
+    FROM classes c
+    INNER JOIN courses co ON c.course_id = co.id
+    WHERE c.id = @ClassId;
+
+    -- Get student level
+    SELECT @StudentLevel = s.current_level
+    FROM students s
+    WHERE s.id = @StudentId;
+
+    -- Map course level to numeric value
+    SET @CourseLevelValue = CASE @CourseLevel
+                               WHEN 'Beginner' THEN 0
+                               WHEN 'Elementary' THEN 1
+                               WHEN 'Intermediate' THEN 2
+                               WHEN 'Advanced' THEN 3
+                               ELSE NULL
+                            END;
+
+    -- Map student level to numeric value
+    SET @StudentLevelValue = CASE @StudentLevel
+                                WHEN 'Beginner' THEN 0
+                                WHEN 'Elementary' THEN 1
+                                WHEN 'Intermediate' THEN 2
+                                WHEN 'Advanced' THEN 3
+                                ELSE NULL
+                             END;
+
+    -- Check eligibility
+    IF @StudentLevelValue IS NOT NULL AND @CourseLevelValue IS NOT NULL
+        SET @Result = CASE WHEN @StudentLevelValue >= @CourseLevelValue THEN 1 ELSE 0 END;
+    ELSE
+        SET @Result = 0;  -- default false if invalid data
+
+    RETURN @Result;
+END;
+
+
+// check schedule conflict
+
+
+CREATE FUNCTION dbo.fn_HasScheduleConflict
+(
+    @StudentID UNIQUEIDENTIFIER,
+    @ClassID UNIQUEIDENTIFIER
+)
+RETURNS BIT
+AS
+BEGIN
+    DECLARE @Result BIT = 0;
+
+    IF EXISTS (
+        SELECT 1
+        FROM schedules s_new
+        INNER JOIN schedules s_exist 
+            ON s_new.session_date = s_exist.session_date
+           AND s_new.start_time < s_exist.end_time
+           AND s_new.end_time > s_exist.start_time
+        WHERE s_new.class_id = @ClassID
+          AND s_exist.class_id IN (
+                SELECT e.class_id 
+                FROM enrollments e 
+                WHERE e.student_id = @StudentID
+            )
+          AND s_exist.class_id <> @ClassID
+    )
+        SET @Result = 1;
+
+    RETURN @Result;
+END;
+
+
+
+// handle enrollment 
+
+CREATE TRIGGER trg_AfterEnrollmentInsert
+ON enrollments
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @StudentID UNIQUEIDENTIFIER;
+    DECLARE @ClassID UNIQUEIDENTIFIER;
+    DECLARE @EnrollmentID UNIQUEIDENTIFIER;
+    DECLARE @InvoiceID UNIQUEIDENTIFIER = NEWID();
+    DECLARE @PaymentID UNIQUEIDENTIFIER = NEWID();
+    DECLARE @InvoiceCode NVARCHAR(20);
+    DECLARE @PaymentCode NVARCHAR(20);
+    DECLARE @Amount DECIMAL(10,2);
+    DECLARE @Discount DECIMAL(10,2);
+    DECLARE @FinalAmount DECIMAL(10,2);
+
+    -- Assume single-row insert
+    SELECT 
+        @EnrollmentID = i.id,
+        @StudentID = i.student_id,
+        @ClassID = i.class_id,
+        @Discount = ISNULL(i.discount_amount, 0)
+    FROM inserted i;
+
+    -- 🔹 Get fee from course
+    SELECT @Amount = co.base_fee 
+    FROM classes c
+    INNER JOIN courses co ON c.course_id = co.id
+    WHERE c.id = @ClassID;
+
+    -- 🔹 Calculate final fee
+    SET @FinalAmount = @Amount - @Discount;
+
+    -- Update enrollment with calculated fees
+    UPDATE enrollments
+    SET total_fee = @Amount,
+        final_fee = @FinalAmount
+    WHERE id = @EnrollmentID;
+
+    -- 1. Check level eligibility
+    IF dbo.fn_IsStudentEligible(@ClassID, @StudentID) = 0
+    BEGIN
+        RAISERROR('Enrollment failed: Student level is not sufficient for this class.', 16, 1);
+        ROLLBACK TRANSACTION;
+        RETURN;
+    END;
+
+    -- 2. Check schedule conflict
+    IF dbo.fn_HasScheduleConflict(@StudentID, @ClassID) = 1
+    BEGIN
+        RAISERROR('Enrollment failed: Schedule conflict detected.', 16, 1);
+        ROLLBACK TRANSACTION;
+        RETURN;
+    END;
+
+    -- 3. Generate invoice and payment codes (simple pattern: prefix + NEWID shortened)
+    SET @InvoiceCode = 'INV-' + LEFT(CONVERT(NVARCHAR(36), NEWID()), 8);
+    SET @PaymentCode = 'PAY-' + LEFT(CONVERT(NVARCHAR(36), NEWID()), 8);
+
+    -- 4. Insert into invoices
+    INSERT INTO invoices (id, enrollment_id, invoice_code, amount, discount, final_amount, due_date, status)
+    VALUES (@InvoiceID, @EnrollmentID, @InvoiceCode, @Amount, @Discount, @FinalAmount, DATEADD(DAY, 15, GETDATE()), 'Pending');
+
+    -- 5. Insert into payments (initially "scheduled" / unpaid)
+    INSERT INTO payments (id, invoice_id, payment_code, amount, payment_method, installment_number, notes)
+    VALUES (@PaymentID, @InvoiceID, @PaymentCode, @FinalAmount, 'Cash', 1, 'Auto-created at enrollment');
+END;
+

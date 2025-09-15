@@ -45,16 +45,16 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(34, 53);
+            this.txtPhone.Location = new System.Drawing.Point(34, 59);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(264, 26);
+            this.txtPhone.Size = new System.Drawing.Size(277, 26);
             this.txtPhone.TabIndex = 0;
             // 
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(317, 55);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(87, 40);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Tim";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -142,7 +142,7 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(153, 408);
+            this.btnRegister.Location = new System.Drawing.Point(153, 410);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(131, 80);
             this.btnRegister.TabIndex = 12;
