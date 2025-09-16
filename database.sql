@@ -23,19 +23,33 @@ CREATE TABLE staff (
     created_at DATETIME DEFAULT GETDATE()
 );
 
--- Hợp đồng
 CREATE TABLE contracts (
     id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
     staff_id UNIQUEIDENTIFIER NOT NULL,
     contract_type NVARCHAR(20) CHECK (contract_type IN ('Full-time', 'Part-time', 'Freelance')),
     start_date DATE NOT NULL,
     end_date DATE,
-    salary_structure NVARCHAR(20) CHECK (salary_structure IN ('Fixed', 'Hourly')),
-    allowances NVARCHAR(MAX),
-    bonus_policy NVARCHAR(MAX),
+    
+    salary_model NVARCHAR(20) CHECK (salary_model IN (N'Fixed', N'Hourly', N'Cố định', N'Theo giờ')) NOT NULL,
+    
+    base_salary DECIMAL(12,2) NULL,   
+    hourly_rate DECIMAL(12,2) NULL,   
+    
+    allowances DECIMAL(12,2) DEFAULT 0,
+    bonus_policy DECIMAL(12,2) DEFAULT 0,
+
     created_at DATETIME DEFAULT GETDATE(),
+
     FOREIGN KEY (staff_id) REFERENCES staff(id)
 );
+
+ALTER TABLE contracts
+ADD CONSTRAINT CK_contracts_salary_model_amount
+CHECK (
+     (salary_model IN (N'Fixed', N'Cố định')     AND base_salary IS NOT NULL AND hourly_rate IS NULL)
+  OR (salary_model IN (N'Hourly', N'Theo giờ')  AND hourly_rate IS NOT NULL AND base_salary IS NULL)
+);
+
 
 -- Chứng chỉ nhân viên
 CREATE TABLE qualifications (
