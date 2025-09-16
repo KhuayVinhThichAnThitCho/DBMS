@@ -2,139 +2,8 @@
 -- THIẾT KẾ CÁC BẢNG - HỆ THỐNG QUẢN LÝ TRUNG TÂM ANH NGỮ
 -- =====================================================
 
--- 1. QUẢN LÝ HỌC VIÊN
 -- =====================================================
--- Học viên
-CREATE TABLE students (
-    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    student_code NVARCHAR(20) UNIQUE NOT NULL,
-    full_name NVARCHAR(100) NOT NULL,
-    phone NVARCHAR(15),
-    email NVARCHAR(100),
-    current_level NVARCHAR(20) CHECK (current_level IN ('Beginner', 'Elementary', 'Intermediate', 'Advanced')),
-    status NVARCHAR(20) CHECK (status IN ('Prospect', 'Active', 'Inactive', 'Graduated')) DEFAULT 'Prospect',
-    created_at DATETIME DEFAULT GETDATE(),
-    updated_at DATETIME DEFAULT GETDATE()
-);
-
--- Trigger để cập nhật updated_at
-CREATE TRIGGER tr_students_update
-ON students
-AFTER UPDATE
-AS
-BEGIN
-    UPDATE students
-    SET updated_at = GETDATE()
-    FROM students
-    INNER JOIN inserted ON students.id = inserted.id;
-END;
-
--- Khóa học
-CREATE TABLE courses (
-    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    course_code NVARCHAR(20) UNIQUE NOT NULL,
-    course_name NVARCHAR(100) NOT NULL,
-    level NVARCHAR(20) CHECK (level IN ('Beginner', 'Elementary', 'Intermediate', 'Advanced')),
-    duration_sessions INT NOT NULL,
-    base_fee DECIMAL(10,2) NOT NULL,
-    created_at DATETIME DEFAULT GETDATE()
-);
-
--- Lớp học
-CREATE TABLE classes (
-    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    class_code NVARCHAR(20) UNIQUE NOT NULL,
-    course_id UNIQUEIDENTIFIER NOT NULL,
-    teacher_id UNIQUEIDENTIFIER,
-    room_id UNIQUEIDENTIFIER,
-    max_capacity INT DEFAULT 15,
-    schedule NVARCHAR(MAX), -- Lưu JSON dạng chuỗi: {"days": ["Monday", "Wednesday"], "time": "18:00-20:00"}
-    start_date DATE,
-    end_date DATE,
-    status NVARCHAR(20) CHECK (status IN ('Planned', 'Open', 'Active', 'Completed', 'Cancelled')) DEFAULT 'Planned',
-    created_at DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (course_id) REFERENCES courses(id),
-    FOREIGN KEY (teacher_id) REFERENCES staff(id),
-    FOREIGN KEY (room_id) REFERENCES rooms(id)
-);
-
--- Ghi danh
-CREATE TABLE enrollments (
-    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    student_id UNIQUEIDENTIFIER NOT NULL,
-    class_id UNIQUEIDENTIFIER NOT NULL,
-    enrollment_date DATE DEFAULT GETDATE(),
-    status NVARCHAR(20) CHECK (status IN ('Test Entry','Pending', 'Active', 'Completed', 'Dropped', 'Cancelled')) DEFAULT 'Pending',
-    total_fee DECIMAL(10,2),
-    discount_amount DECIMAL(10,2) DEFAULT 0,
-    final_fee DECIMAL(10,2),
-    payment_plan NVARCHAR(20) CHECK (payment_plan IN ('Full', 'Installment')) DEFAULT 'Full',
-    created_at DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (student_id) REFERENCES students(id),
-    FOREIGN KEY (class_id) REFERENCES classes(id)
-);
-
--- Điểm danh
-CREATE TABLE attendance (
-    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    class_id UNIQUEIDENTIFIER NOT NULL,
-    student_id UNIQUEIDENTIFIER NOT NULL,
-    session_date DATE NOT NULL,
-    session_number INT NOT NULL,
-    status NVARCHAR(20) CHECK (status IN ('Present', 'Absent', 'Late', 'Excused')) DEFAULT 'Present',
-    created_at DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (class_id) REFERENCES classes(id),
-    FOREIGN KEY (student_id) REFERENCES students(id)
-);
-
--- Đánh giá
-CREATE TABLE assessments (
-    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    class_id UNIQUEIDENTIFIER NOT NULL,
-    student_id UNIQUEIDENTIFIER NOT NULL,
-    homework_score DECIMAL(5,2),
-    midterm_score DECIMAL(5,2),
-    final_score DECIMAL(5,2),
-    total_score DECIMAL(5,2),
-    result NVARCHAR(20) CHECK (result IN ('Pass', 'Fail')),
-    created_at DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (class_id) REFERENCES classes(id),
-    FOREIGN KEY (student_id) REFERENCES students(id)
-);
-
--- =====================================================
--- 2. QUẢN LÝ TÀI CHÍNH
--- =====================================================
--- Hóa đơn
-CREATE TABLE invoices (
-    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    enrollment_id UNIQUEIDENTIFIER NOT NULL,
-    invoice_code NVARCHAR(20) UNIQUE NOT NULL,
-    amount DECIMAL(10,2) NOT NULL,
-    discount DECIMAL(10,2) DEFAULT 0,
-    final_amount DECIMAL(10,2) NOT NULL,
-    due_date DATE,
-    status NVARCHAR(20) CHECK (status IN ('Pending', 'Paid', 'Overdue', 'Cancelled')) DEFAULT 'Pending',
-    created_at DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (enrollment_id) REFERENCES enrollments(id)
-);
-
--- Thanh toán
-CREATE TABLE payments (
-    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    invoice_id UNIQUEIDENTIFIER NOT NULL,
-    payment_code NVARCHAR(20) UNIQUE NOT NULL,
-    amount DECIMAL(10,2) NOT NULL,
-    payment_method NVARCHAR(20) CHECK (payment_method IN ('Cash', 'Transfer', 'Card', 'QR')) DEFAULT 'Cash',
-    payment_date DATE DEFAULT GETDATE(),
-    installment_number INT DEFAULT 1,
-    notes NVARCHAR(MAX),
-    created_at DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (invoice_id) REFERENCES invoices(id)
-);
-
--- =====================================================
--- 3. QUẢN LÝ NHÂN VIÊN
+-- 3. QUẢN LÝ NHÂN VIÊN (tạo trước vì nhiều bảng khác FK tới)
 -- =====================================================
 -- Nhân viên
 CREATE TABLE staff (
@@ -143,12 +12,44 @@ CREATE TABLE staff (
     full_name NVARCHAR(100) NOT NULL,
     phone NVARCHAR(15),
     email NVARCHAR(100),
-    role NVARCHAR(20) CHECK (role IN ('Teacher', 'Assistant', 'Counselor', 'Admin')),
+    role NVARCHAR(30) CHECK (role IN ('Teacher', 'Assistant', 'Counselor', 'Admin', 'Accountant')),
     employment_type NVARCHAR(20) CHECK (employment_type IN ('Full-time', 'Part-time', 'Freelancer')),
     status NVARCHAR(20) CHECK (status IN ('Onboarding', 'Active', 'Suspended', 'Terminated')) DEFAULT 'Onboarding',
     hire_date DATE,
+    termination_date DATE,
+    contact_info NVARCHAR(MAX),
+    bank_account NVARCHAR(50),
+    tax_code NVARCHAR(50),
     created_at DATETIME DEFAULT GETDATE()
 );
+
+CREATE TABLE contracts (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    staff_id UNIQUEIDENTIFIER NOT NULL,
+    contract_type NVARCHAR(20) CHECK (contract_type IN ('Full-time', 'Part-time', 'Freelance')),
+    start_date DATE NOT NULL,
+    end_date DATE,
+    
+    salary_model NVARCHAR(20) CHECK (salary_model IN (N'Fixed', N'Hourly', N'Cố định', N'Theo giờ')) NOT NULL,
+    
+    base_salary DECIMAL(12,2) NULL,   
+    hourly_rate DECIMAL(12,2) NULL,   
+    
+    allowances DECIMAL(12,2) DEFAULT 0,
+    bonus_policy DECIMAL(12,2) DEFAULT 0,
+
+    created_at DATETIME DEFAULT GETDATE(),
+
+    FOREIGN KEY (staff_id) REFERENCES staff(id)
+);
+
+ALTER TABLE contracts
+ADD CONSTRAINT CK_contracts_salary_model_amount
+CHECK (
+     (salary_model IN (N'Fixed', N'Cố định')     AND base_salary IS NOT NULL AND hourly_rate IS NULL)
+  OR (salary_model IN (N'Hourly', N'Theo giờ')  AND hourly_rate IS NOT NULL AND base_salary IS NULL)
+);
+
 
 -- Chứng chỉ nhân viên
 CREATE TABLE qualifications (
@@ -175,6 +76,21 @@ CREATE TABLE timesheets (
     FOREIGN KEY (staff_id) REFERENCES staff(id)
 );
 
+-- Đánh giá hiệu suất
+CREATE TABLE performance_reviews (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    staff_id UNIQUEIDENTIFIER NOT NULL,
+    period NVARCHAR(20) CHECK (period IN ('Month','Quarter','Year')),
+    completion_rate DECIMAL(5,2),
+    feedback_score DECIMAL(5,2),
+    retention_impact DECIMAL(5,2),
+    overall_rating NVARCHAR(20) CHECK (overall_rating IN ('Excellent','Good','Average','Poor')),
+    reviewer NVARCHAR(100),
+    comments NVARCHAR(MAX),
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (staff_id) REFERENCES staff(id)
+);
+
 -- =====================================================
 -- 4. QUẢN LÝ PHÒNG HỌC & THIẾT BỊ
 -- =====================================================
@@ -185,7 +101,7 @@ CREATE TABLE rooms (
     room_name NVARCHAR(50),
     capacity INT NOT NULL,
     status NVARCHAR(20) CHECK (status IN ('Available', 'In-Use', 'Maintenance', 'Out-of-Service')) DEFAULT 'Available',
-    facilities NVARCHAR(MAX), -- Lưu JSON dạng chuỗi: ["projector", "whiteboard", "air-conditioner"]
+    facilities NVARCHAR(MAX),
     created_at DATETIME DEFAULT GETDATE()
 );
 
@@ -202,6 +118,17 @@ CREATE TABLE assets (
     FOREIGN KEY (current_room_id) REFERENCES rooms(id)
 );
 
+-- Vị trí thiết bị
+CREATE TABLE asset_locations (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    asset_id UNIQUEIDENTIFIER NOT NULL,
+    room_id UNIQUEIDENTIFIER,
+    location_note NVARCHAR(200),
+    updated_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (asset_id) REFERENCES assets(id),
+    FOREIGN KEY (room_id) REFERENCES rooms(id)
+);
+
 -- Mượn thiết bị
 CREATE TABLE asset_checkouts (
     id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
@@ -216,6 +143,153 @@ CREATE TABLE asset_checkouts (
     FOREIGN KEY (borrower_id) REFERENCES staff(id)
 );
 
+-- Bảo trì
+CREATE TABLE maintenance (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    target_type NVARCHAR(20) CHECK (target_type IN ('Asset','Room')),
+    target_id UNIQUEIDENTIFIER NOT NULL,
+    scheduled_date DATE,
+    performed_date DATE,
+    issue_description NVARCHAR(MAX),
+    action_taken NVARCHAR(MAX),
+    cost DECIMAL(10,2),
+    status NVARCHAR(20) CHECK (status IN ('Scheduled','In Progress','Completed','Cancelled')) DEFAULT 'Scheduled',
+    created_at DATETIME DEFAULT GETDATE()
+);
+
+-- =====================================================
+-- 1. QUẢN LÝ HỌC VIÊN
+-- =====================================================
+CREATE TABLE students (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    student_code NVARCHAR(20) UNIQUE NOT NULL,
+    full_name NVARCHAR(100) NOT NULL,
+    phone NVARCHAR(15),
+    email NVARCHAR(100),
+    current_level NVARCHAR(20) CHECK (current_level IN ('Beginner', 'Elementary', 'Intermediate', 'Advanced')),
+    status NVARCHAR(20) CHECK (status IN ('Prospect', 'Active', 'Inactive', 'Graduated')) DEFAULT 'Prospect',
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
+);
+GO  
+
+-- Trigger cập nhật updated_at
+CREATE TRIGGER tr_students_update
+ON students
+AFTER UPDATE
+AS
+BEGIN
+    UPDATE students
+    SET updated_at = GETDATE()
+    FROM students
+    INNER JOIN inserted ON students.id = inserted.id;
+END;
+GO
+
+-- Khóa học
+CREATE TABLE courses (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    course_code NVARCHAR(20) UNIQUE NOT NULL,
+    course_name NVARCHAR(100) NOT NULL,
+    level NVARCHAR(20) CHECK (level IN ('Beginner', 'Elementary', 'Intermediate', 'Advanced')),
+    duration_sessions INT NOT NULL,
+    base_fee DECIMAL(10,2) NOT NULL,
+    created_at DATETIME DEFAULT GETDATE()
+);
+
+-- Lớp học
+CREATE TABLE classes (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    class_code NVARCHAR(20) UNIQUE NOT NULL,
+    course_id UNIQUEIDENTIFIER NOT NULL,
+    teacher_id UNIQUEIDENTIFIER,
+    room_id UNIQUEIDENTIFIER,
+    max_capacity INT DEFAULT 15,
+    schedule NVARCHAR(MAX),
+    start_date DATE,
+    end_date DATE,
+    status NVARCHAR(20) CHECK (status IN ('Planned', 'Open', 'Active', 'Completed', 'Cancelled')) DEFAULT 'Planned',
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (course_id) REFERENCES courses(id),
+    FOREIGN KEY (teacher_id) REFERENCES staff(id),
+    FOREIGN KEY (room_id) REFERENCES rooms(id)
+);
+
+-- Ghi danh
+CREATE TABLE enrollments (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    student_id UNIQUEIDENTIFIER NOT NULL,
+    class_id UNIQUEIDENTIFIER NOT NULL,
+    enrollment_date DATE DEFAULT GETDATE(),
+    status NVARCHAR(20) CHECK (status IN ('Test Entry','Pending','Active','Completed','Dropped','Cancelled')) DEFAULT 'Pending',
+    total_fee DECIMAL(10,2),
+    discount_amount DECIMAL(10,2) DEFAULT 0,
+    final_fee DECIMAL(10,2),
+    payment_plan NVARCHAR(20) CHECK (payment_plan IN ('Full','Installment')) DEFAULT 'Full',
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (student_id) REFERENCES students(id),
+    FOREIGN KEY (class_id) REFERENCES classes(id)
+);
+
+-- Điểm danh
+CREATE TABLE attendance (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    class_id UNIQUEIDENTIFIER NOT NULL,
+    student_id UNIQUEIDENTIFIER NOT NULL,
+    session_date DATE NOT NULL,
+    session_number INT NOT NULL,
+    status NVARCHAR(20) CHECK (status IN ('Present','Absent','Late','Excused')) DEFAULT 'Present',
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (class_id) REFERENCES classes(id),
+    FOREIGN KEY (student_id) REFERENCES students(id)
+);
+
+-- Đánh giá
+CREATE TABLE assessments (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    class_id UNIQUEIDENTIFIER NOT NULL,
+    student_id UNIQUEIDENTIFIER NOT NULL,
+    homework_score DECIMAL(5,2),
+    midterm_score DECIMAL(5,2),
+    final_score DECIMAL(5,2),
+    total_score DECIMAL(5,2),
+    result NVARCHAR(20) CHECK (result IN ('Pass','Fail')),
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (class_id) REFERENCES classes(id),
+    FOREIGN KEY (student_id) REFERENCES students(id)
+);
+
+-- =====================================================
+-- 2. QUẢN LÝ TÀI CHÍNH
+-- =====================================================
+-- Hóa đơn
+CREATE TABLE invoices (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    enrollment_id UNIQUEIDENTIFIER NOT NULL,
+    invoice_code NVARCHAR(20) UNIQUE NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    discount DECIMAL(10,2) DEFAULT 0,
+    final_amount DECIMAL(10,2) NOT NULL,
+    due_date DATE,
+    status NVARCHAR(20) CHECK (status IN ('Pending','Paid','Overdue','Cancelled')) DEFAULT 'Pending',
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (enrollment_id) REFERENCES enrollments(id)
+);
+
+-- Thanh toán
+CREATE TABLE payments (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    invoice_id UNIQUEIDENTIFIER NOT NULL,
+    payment_code NVARCHAR(20) UNIQUE NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    payment_method NVARCHAR(20) CHECK (payment_method IN ('Cash','Transfer','Card','QR')) DEFAULT 'Cash',
+    payment_date DATE DEFAULT GETDATE(),
+    installment_number INT DEFAULT 1,
+    notes NVARCHAR(MAX),
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (invoice_id) REFERENCES invoices(id)
+);
+
 -- =====================================================
 -- 5. BẢNG PHỤ TRỢ
 -- =====================================================
@@ -228,7 +302,7 @@ CREATE TABLE schedules (
     start_time TIME NOT NULL,
     end_time TIME NOT NULL,
     room_id UNIQUEIDENTIFIER,
-    status NVARCHAR(20) CHECK (status IN ('Scheduled', 'Completed', 'Cancelled', 'Rescheduled')) DEFAULT 'Scheduled',
+    status NVARCHAR(20) CHECK (status IN ('Scheduled','Completed','Cancelled','Rescheduled')) DEFAULT 'Scheduled',
     notes NVARCHAR(MAX),
     created_at DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (class_id) REFERENCES classes(id),
@@ -242,7 +316,7 @@ CREATE TABLE teaching_assignments (
     teacher_id UNIQUEIDENTIFIER NOT NULL,
     assistant_id UNIQUEIDENTIFIER,
     assigned_date DATE DEFAULT GETDATE(),
-    status NVARCHAR(20) CHECK (status IN ('Assigned', 'Active', 'Substituted', 'Cancelled')) DEFAULT 'Assigned',
+    status NVARCHAR(20) CHECK (status IN ('Assigned','Active','Substituted','Cancelled')) DEFAULT 'Assigned',
     created_at DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (class_id) REFERENCES classes(id),
     FOREIGN KEY (teacher_id) REFERENCES staff(id),
