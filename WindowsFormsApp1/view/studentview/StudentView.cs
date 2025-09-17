@@ -41,7 +41,7 @@ namespace WindowsFormsApp1.view
                     childForm = new EnrollmentForm();
                     break;
                 case 3:
-                    childForm = new LearningForm();
+                    childForm = new TeacherAvailableCourse();
                     break;
                 case 4:
                     childForm = new Finance();

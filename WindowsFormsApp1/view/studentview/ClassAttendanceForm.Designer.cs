@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.view.studentview
 {
-    partial class ScheduleForm
+    partial class ClassAttendanceForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ScheduleForm";
+            this.Text = "ClassAttendanceForm";
         }
 
         #endregion

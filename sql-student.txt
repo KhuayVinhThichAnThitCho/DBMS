@@ -164,74 +164,89 @@ END;
 
 
 // handle enrollment 
-
-CREATE TRIGGER trg_AfterEnrollmentInsert
+CREATE OR ALTER TRIGGER trg_AfterEnrollmentInsert
 ON enrollments
 AFTER INSERT
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    DECLARE @StudentID UNIQUEIDENTIFIER;
-    DECLARE @ClassID UNIQUEIDENTIFIER;
-    DECLARE @EnrollmentID UNIQUEIDENTIFIER;
-    DECLARE @InvoiceID UNIQUEIDENTIFIER = NEWID();
-    DECLARE @PaymentID UNIQUEIDENTIFIER = NEWID();
-    DECLARE @InvoiceCode NVARCHAR(20);
-    DECLARE @PaymentCode NVARCHAR(20);
-    DECLARE @Amount DECIMAL(10,2);
-    DECLARE @Discount DECIMAL(10,2);
-    DECLARE @FinalAmount DECIMAL(10,2);
+    BEGIN TRY
+        -- Declare variables
+        DECLARE @StudentID UNIQUEIDENTIFIER;
+        DECLARE @ClassID UNIQUEIDENTIFIER;
+        DECLARE @EnrollmentID UNIQUEIDENTIFIER;
+        DECLARE @InvoiceID UNIQUEIDENTIFIER = NEWID();
+        DECLARE @PaymentID UNIQUEIDENTIFIER = NEWID();
+        DECLARE @InvoiceCode NVARCHAR(20);
+        DECLARE @PaymentCode NVARCHAR(20);
+        DECLARE @Amount DECIMAL(10,2);
+        DECLARE @Discount DECIMAL(10,2);
+        DECLARE @FinalAmount DECIMAL(10,2);
 
-    -- Assume single-row insert
-    SELECT 
-        @EnrollmentID = i.id,
-        @StudentID = i.student_id,
-        @ClassID = i.class_id,
-        @Discount = ISNULL(i.discount_amount, 0)
-    FROM inserted i;
+        -- Assume single-row insert
+        SELECT 
+            @EnrollmentID = i.id,
+            @StudentID = i.student_id,
+            @ClassID = i.class_id,
+            @Discount = ISNULL(i.discount_amount, 0)
+        FROM inserted i;
 
-    -- 🔹 Get fee from course
-    SELECT @Amount = co.base_fee 
-    FROM classes c
-    INNER JOIN courses co ON c.course_id = co.id
-    WHERE c.id = @ClassID;
+        -- Get fee from course
+        SELECT @Amount = co.base_fee 
+        FROM classes c
+        INNER JOIN courses co ON c.course_id = co.id
+        WHERE c.id = @ClassID;
 
-    -- 🔹 Calculate final fee
-    SET @FinalAmount = @Amount - @Discount;
+        -- Calculate final fee
+        SET @FinalAmount = @Amount - @Discount;
 
-    -- Update enrollment with calculated fees
-    UPDATE enrollments
-    SET total_fee = @Amount,
-        final_fee = @FinalAmount
-    WHERE id = @EnrollmentID;
+        -- Update enrollment with calculated fees
+        UPDATE enrollments
+        SET total_fee = @Amount,
+            final_fee = @FinalAmount
+        WHERE id = @EnrollmentID;
 
-    -- 1. Check level eligibility
-    IF dbo.fn_IsStudentEligible(@ClassID, @StudentID) = 0
-    BEGIN
-        RAISERROR('Enrollment failed: Student level is not sufficient for this class.', 16, 1);
-        ROLLBACK TRANSACTION;
-        RETURN;
-    END;
+        -- 1. Check level eligibility
+        IF dbo.fn_IsStudentEligible(@ClassID, @StudentID) = 0
+        BEGIN
+            RAISERROR('Enrollment failed: Student level is not sufficient for this class.', 16, 1);
+            ROLLBACK TRANSACTION;
+            RETURN;
+        END;
 
-    -- 2. Check schedule conflict
-    IF dbo.fn_HasScheduleConflict(@StudentID, @ClassID) = 1
-    BEGIN
-        RAISERROR('Enrollment failed: Schedule conflict detected.', 16, 1);
-        ROLLBACK TRANSACTION;
-        RETURN;
-    END;
+        -- 2. Check schedule conflict
+        IF dbo.fn_HasScheduleConflict(@StudentID, @ClassID) = 1
+        BEGIN
+            RAISERROR('Enrollment failed: Schedule conflict detected.', 16, 1);
+            ROLLBACK TRANSACTION;
+            RETURN;
+        END;
 
-    -- 3. Generate invoice and payment codes (simple pattern: prefix + NEWID shortened)
-    SET @InvoiceCode = 'INV-' + LEFT(CONVERT(NVARCHAR(36), NEWID()), 8);
-    SET @PaymentCode = 'PAY-' + LEFT(CONVERT(NVARCHAR(36), NEWID()), 8);
+        -- 3. Generate invoice and payment codes
+        SET @InvoiceCode = 'INV-' + LEFT(CONVERT(NVARCHAR(36), NEWID()), 8);
+        SET @PaymentCode = 'PAY-' + LEFT(CONVERT(NVARCHAR(36), NEWID()), 8);
 
-    -- 4. Insert into invoices
-    INSERT INTO invoices (id, enrollment_id, invoice_code, amount, discount, final_amount, due_date, status)
-    VALUES (@InvoiceID, @EnrollmentID, @InvoiceCode, @Amount, @Discount, @FinalAmount, DATEADD(DAY, 15, GETDATE()), 'Pending');
+        -- 4. Insert into invoices
+        INSERT INTO invoices 
+            (id, enrollment_id, invoice_code, amount, discount, final_amount, due_date, status)
+        VALUES 
+            (@InvoiceID, @EnrollmentID, @InvoiceCode, @Amount, @Discount, @FinalAmount, DATEADD(DAY, 15, GETDATE()), 'Pending');
 
-    -- 5. Insert into payments (initially "scheduled" / unpaid)
-    INSERT INTO payments (id, invoice_id, payment_code, amount, payment_method, installment_number, notes)
-    VALUES (@PaymentID, @InvoiceID, @PaymentCode, @FinalAmount, 'Cash', 1, 'Auto-created at enrollment');
+
+
+        -- 6. Update class capacity
+        UPDATE classes
+        SET current_capacity = current_capacity + 1
+        WHERE id = @ClassID;
+
+    END TRY
+    BEGIN CATCH
+        -- Rollback on any unexpected error
+        IF XACT_STATE() <> 0
+            ROLLBACK TRANSACTION;
+
+        -- Re-throw the error to the client
+        THROW;
+    END CATCH
 END;
-

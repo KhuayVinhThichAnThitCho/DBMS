@@ -15,6 +15,7 @@ namespace WindowsFormsApp1.service
         {
             return classDAO.FindClassByCourseId(code);
         }
+    
         public List<Class> getAvailableClass(Guid code)
         {
             return classDAO.FindAvailbaleClassByCourseId(code);

@@ -110,5 +110,30 @@ namespace WindowsFormsApp1.data
 
             return classes;
         }
+
+        public DataTable FindTeacherClasses(Guid courseId, Guid teacherId)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection conn = DBConnection.getConnection())
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand("sp_FindTeacherClasses", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@CourseCode", courseId);
+                    cmd.Parameters.AddWithValue("@TeacherId", teacherId);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+
+            return dt;
+        }
+
     }
 }

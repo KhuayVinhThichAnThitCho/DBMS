@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.model;
+using WindowsFormsApp1.view.studentview;
 
 namespace WindowsFormsApp1
 {
@@ -14,6 +16,8 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
+           
+        
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new EnglishAcademy());

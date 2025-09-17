@@ -113,6 +113,12 @@
     <Compile Include="view\studentview\AvailableClassForm.Designer.cs">
       <DependentUpon>AvailableClassForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\studentview\ClassAttendanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\studentview\ClassAttendanceForm.Designer.cs">
+      <DependentUpon>ClassAttendanceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\studentview\ClassForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,12 +149,6 @@
     <Compile Include="view\studentview\LearningForm.Designer.cs">
       <DependentUpon>LearningForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\studentview\ScheduleForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\studentview\ScheduleForm.Designer.cs">
-      <DependentUpon>ScheduleForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="view\studentview\StudentRegisterClassForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +166,18 @@
     </Compile>
     <Compile Include="view\studentview\StudentView.Designer.cs">
       <DependentUpon>StudentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\studentview\TeacherAvailableClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\studentview\TeacherAvailableClass.Designer.cs">
+      <DependentUpon>TeacherAvailableClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\studentview\TeacherAvailableCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\studentview\TeacherAvailableCourse.Designer.cs">
+      <DependentUpon>TeacherAvailableCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="view\TeachingView.cs">
       <SubType>Form</SubType>
@@ -211,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\studentview\StudentView.resx">
       <DependentUpon>StudentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\studentview\TeacherAvailableClass.resx">
+      <DependentUpon>TeacherAvailableClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\studentview\TeacherAvailableCourse.resx">
+      <DependentUpon>TeacherAvailableCourse.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
