@@ -36,3 +36,5 @@ D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.
 D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.ClassForm.resources
 D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.AvailableClassForm.resources
 D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.StudentRegisterClassForm.resources
+D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.TeacherAvailableClass.resources
+D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.TeacherAvailableCourse.resources

@@ -16,7 +16,6 @@ CREATE TABLE students (
     created_at DATETIME DEFAULT GETDATE(),
     updated_at DATETIME DEFAULT GETDATE()
 );
-
 -- Trigger để cập nhật updated_at
 CREATE TRIGGER tr_students_update
 ON students
@@ -64,7 +63,7 @@ CREATE TABLE enrollments (
     student_id UNIQUEIDENTIFIER NOT NULL,
     class_id UNIQUEIDENTIFIER NOT NULL,
     enrollment_date DATE DEFAULT GETDATE(),
-    status NVARCHAR(20) CHECK (status IN ('Pending', 'Active', 'Completed', 'Dropped', 'Cancelled')) DEFAULT 'Pending',
+    status NVARCHAR(20) CHECK (status IN ('Pending', 'Active', 'Completed', ,'WARNING','Dropped', 'Cancelled')) DEFAULT 'Pending',
     total_fee DECIMAL(10,2),
     discount_amount DECIMAL(10,2) DEFAULT 0,
     final_fee DECIMAL(10,2),

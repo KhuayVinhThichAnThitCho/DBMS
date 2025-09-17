@@ -15,6 +15,7 @@ namespace WindowsFormsApp1.view.studentview
     public partial class StudentRegisterClassForm : Form
     {
         private StudentService studentService = new StudentService();
+        private EnrollmentService enrollmentService = new EnrollmentService();
         private Guid classId;
         private Student selectedStudent;
         public StudentRegisterClassForm(Guid Id)
@@ -49,6 +50,7 @@ namespace WindowsFormsApp1.view.studentview
             {
                 txtStudentCode.Text = selectedStudent.StudentCode;
                 txtFullName.Text = selectedStudent.FullName;
+                txtPhone1.Text = selectedStudent.Phone;
                 txtEmail.Text = selectedStudent.Email;
                 txtCurrentLevel.Text = selectedStudent.CurrentLevel;
             }
@@ -62,11 +64,18 @@ namespace WindowsFormsApp1.view.studentview
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            // TODO: lấy student_id từ object bạn sẽ xử lý sau
-            // TODO: gọi service để tạo bản ghi enrollment cho classId và studentId
+            var result = this.enrollmentService.handleEnrollment(selectedStudent.Id, classId);
 
-            MessageBox.Show("Đã gửi yêu cầu đăng ký lớp!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            if (result.Success)
+            {
+                MessageBox.Show(result.Message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(result.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }
