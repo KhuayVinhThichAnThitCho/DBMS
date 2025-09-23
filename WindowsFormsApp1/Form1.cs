@@ -41,18 +41,7 @@ namespace WindowsFormsApp1
 
         private void btn_teacher_Click(object sender, EventArgs e)
         {
-            // Xóa control cũ trong panel (nếu có)
-            panelMain.Controls.Clear();
 
-            // Khởi tạo form2
-            StaffView frm = new StaffView();
-            frm.TopLevel = false;              // Quan trọng: không cho form chạy độc lập
-            frm.FormBorderStyle = FormBorderStyle.None; // Bỏ viền
-            frm.Dock = DockStyle.Fill;         // Fill toàn bộ panel
-
-            // Thêm form2 vào panelMain
-            panelMain.Controls.Add(frm);
-            frm.Show();
         }
 
         private void btn_Ass_Click(object sender, EventArgs e)

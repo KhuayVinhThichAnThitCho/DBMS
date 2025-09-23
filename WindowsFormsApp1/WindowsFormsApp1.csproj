@@ -57,6 +57,7 @@
     <Compile Include="data\CourseDAO.cs" />
     <Compile Include="data\DBConnection.cs" />
     <Compile Include="data\EnrollmentDAO.cs" />
+    <Compile Include="data\Staff\StaffDao.cs" />
     <Compile Include="data\StudentDAO.cs" />
     <Compile Include="enumerate\AttendanceStatus.cs" />
     <Compile Include="enumerate\ClassStatus.cs" />
@@ -101,11 +102,47 @@
     <Compile Include="view\Equipment.Designer.cs">
       <DependentUpon>Equipment.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\StaffView.cs">
+    <Compile Include="view\StaffView\AddContracts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\StaffView.Designer.cs">
-      <DependentUpon>StaffView.cs</DependentUpon>
+    <Compile Include="view\StaffView\AddContracts.Designer.cs">
+      <DependentUpon>AddContracts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\StaffView\AddQualification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\StaffView\AddQualification.Designer.cs">
+      <DependentUpon>AddQualification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\StaffView\AddStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\StaffView\AddStaff.Designer.cs">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\StaffView\SalaryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\StaffView\SalaryView.Designer.cs">
+      <DependentUpon>SalaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\StaffView\StaffManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\StaffView\StaffManager.Designer.cs">
+      <DependentUpon>StaffManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\StaffView\TeminateView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\StaffView\TeminateView.Designer.cs">
+      <DependentUpon>TeminateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\StaffView\UpdateStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\StaffView\UpdateStaff.Designer.cs">
+      <DependentUpon>UpdateStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="view\studentview\AvailableClassForm.cs">
       <SubType>Form</SubType>
@@ -197,6 +234,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\StaffView\AddStaff.resx">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\StaffView\SalaryView.resx">
+      <DependentUpon>SalaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\StaffView\StaffManager.resx">
+      <DependentUpon>StaffManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\StaffView\UpdateStaff.resx">
+      <DependentUpon>UpdateStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\studentview\AvailableClassForm.resx">
       <DependentUpon>AvailableClassForm.cs</DependentUpon>
     </EmbeddedResource>

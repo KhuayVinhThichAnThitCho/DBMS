@@ -91,6 +91,19 @@ CREATE TABLE performance_reviews (
     FOREIGN KEY (staff_id) REFERENCES staff(id)
 );
 
+CREATE TABLE Payroll.staff_monthly_salary (
+    id UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID() PRIMARY KEY,
+    staff_id UNIQUEIDENTIFIER NOT NULL REFERENCES dbo.staff(id),
+    period_year INT NOT NULL,
+    period_month TINYINT NOT NULL CHECK (period_month BETWEEN 1 AND 12),
+    total_amount DECIMAL(14,2) NOT NULL DEFAULT 0,
+    disbursed_amount DECIMAL(14,2) NOT NULL DEFAULT 0,
+    last_disbursed_at DATETIME NULL,
+    created_at DATETIME NOT NULL DEFAULT GETDATE(),
+    CONSTRAINT UQ_staff_month UNIQUE (staff_id, period_year, period_month)
+);
+GO
+
 -- =====================================================
 -- 4. QUẢN LÝ PHÒNG HỌC & THIẾT BỊ
 -- =====================================================

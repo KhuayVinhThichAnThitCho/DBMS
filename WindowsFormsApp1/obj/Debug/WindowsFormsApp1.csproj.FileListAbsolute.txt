@@ -38,3 +38,31 @@ D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.
 D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.StudentRegisterClassForm.resources
 D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.TeacherAvailableClass.resources
 D:\DBMS\Du an\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.TeacherAvailableCourse.resources
+D:\DBMS\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\DBMS\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\DBMS\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\DBMS\WindowsFormsApp1\bin\Debug\Guna.UI2.dll
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.EnglishAcademy.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.AvailableClassForm.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.ClassForm.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.CoursesForm.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.EnrollmentForm.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.Finance.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.LearningForm.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.StudentRegisterClassForm.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.StudentsForm.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.StudentView.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.TeacherAvailableClass.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.studentview.TeacherAvailableCourse.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsF.A1EEDF9B.Up2Date
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.StaffView.AddStaff.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.StaffView.StaffManager.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.StaffView.UpdateStaff.resources
+D:\DBMS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.view.StaffView.SalaryView.resources

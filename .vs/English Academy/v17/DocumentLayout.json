@@ -1,74 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\DBMS\\Du an\\DBMS\\",
+  "WorkspaceRootPath": "D:\\DBMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\view\\studentview\\teacheravailableclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\studentview\\teacheravailableclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|d:\\dbms\\windowsformsapp1\\view\\staffview\\staffmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\staffview\\staffmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|d:\\dbms\\du an\\dbms\\windowsformsapp1\\view\\studentview\\classattendanceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\studentview\\classattendanceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\windowsformsapp1\\data\\staff\\staffdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\data\\staff\\staffdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\view\\studentview\\teacheravailablecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\studentview\\teacheravailablecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\windowsformsapp1\\view\\staffview\\staffmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\staffview\\staffmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\view\\studentview\\teacheravailablecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\studentview\\teacheravailablecourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\view\\studentview\\studentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\studentview\\studentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|d:\\dbms\\du an\\dbms\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|d:\\dbms\\du an\\dbms\\windowsformsapp1\\model\\schedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\model\\schedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\view\\studentview\\studentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\studentview\\studentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\view\\studentview\\teacheravailableclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\studentview\\teacheravailableclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|d:\\dbms\\du an\\dbms\\windowsformsapp1\\view\\studentview\\classattendanceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\studentview\\classattendanceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\view\\studentview\\availableclassform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\studentview\\availableclassform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\view\\studentview\\classform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\studentview\\classform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\service\\classservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\service\\classservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\data\\classdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\data\\classdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\view\\studentview\\coursesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\studentview\\coursesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\view\\teachingview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\teachingview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\Du an\\DBMS\\windowsformsapp1\\view\\studentview\\availableclassform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\studentview\\availableclassform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|d:\\dbms\\windowsformsapp1\\view\\staffview\\salaryview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\staffview\\salaryview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,216 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TeacherAvailableClass.cs",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\TeacherAvailableClass.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\studentview\\TeacherAvailableClass.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\TeacherAvailableClass.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\studentview\\TeacherAvailableClass.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAAAHkAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:27:20.306Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "TeacherAvailableCourse.cs",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\TeacherAvailableCourse.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\studentview\\TeacherAvailableCourse.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\TeacherAvailableCourse.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\studentview\\TeacherAvailableCourse.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAgwFsAAAAkAAAAAAAAAA==",
+              "Title": "SalaryView.cs",
+              "DocumentMoniker": "D:\\DBMS\\WindowsFormsApp1\\view\\StaffView\\SalaryView.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\StaffView\\SalaryView.cs",
+              "ToolTip": "D:\\DBMS\\WindowsFormsApp1\\view\\StaffView\\SalaryView.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\view\\StaffView\\SalaryView.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAEBVwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:23:45.438Z",
+              "WhenOpened": "2025-09-23T12:10:58.645Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TeacherAvailableCourse.cs [Design]",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\TeacherAvailableCourse.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\studentview\\TeacherAvailableCourse.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\TeacherAvailableCourse.cs [Design]",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\studentview\\TeacherAvailableCourse.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:24:33.071Z",
-              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ClassAttendanceForm.cs",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\ClassAttendanceForm.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\studentview\\ClassAttendanceForm.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\ClassAttendanceForm.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\studentview\\ClassAttendanceForm.cs",
-              "ViewState": "AgIAANsAAAAAAAAAAAAUwOYAAAA7AAAAAAAAAA==",
+              "Title": "StaffDao.cs",
+              "DocumentMoniker": "D:\\DBMS\\WindowsFormsApp1\\data\\Staff\\StaffDao.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\data\\Staff\\StaffDao.cs",
+              "ToolTip": "D:\\DBMS\\WindowsFormsApp1\\data\\Staff\\StaffDao.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\data\\Staff\\StaffDao.cs",
+              "ViewState": "AgIAALABAAAAAAAAAAAjwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T14:06:33.073Z",
+              "WhenOpened": "2025-09-23T10:03:48.116Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StudentView.cs",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\StudentView.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\studentview\\StudentView.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\StudentView.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\studentview\\StudentView.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "StaffManager.cs [Design]",
+              "DocumentMoniker": "D:\\DBMS\\WindowsFormsApp1\\view\\StaffView\\StaffManager.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\StaffView\\StaffManager.cs",
+              "ToolTip": "D:\\DBMS\\WindowsFormsApp1\\view\\StaffView\\StaffManager.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\view\\StaffView\\StaffManager.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:41:40.623Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\Program.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Program.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\Program.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Program.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA0wBYAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T18:09:52.115Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Schedule.cs",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\model\\Schedule.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\model\\Schedule.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\model\\Schedule.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\model\\Schedule.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T14:39:03.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "StudentView.cs [Design]",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\StudentView.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\studentview\\StudentView.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\StudentView.cs [Design]",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\studentview\\StudentView.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:41:37.759Z",
+              "WhenOpened": "2025-09-23T11:32:19.357Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TeacherAvailableClass.cs [Design]",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\TeacherAvailableClass.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\studentview\\TeacherAvailableClass.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\TeacherAvailableClass.cs [Design]",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\studentview\\TeacherAvailableClass.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "StaffManager.cs",
+              "DocumentMoniker": "D:\\DBMS\\WindowsFormsApp1\\view\\StaffView\\StaffManager.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\StaffView\\StaffManager.cs",
+              "ToolTip": "D:\\DBMS\\WindowsFormsApp1\\view\\StaffView\\StaffManager.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\view\\StaffView\\StaffManager.cs",
+              "ViewState": "AgIAACgBAAAAAAAAAAAjwBYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:25:14.198Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ClassAttendanceForm.cs [Design]",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\ClassAttendanceForm.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\studentview\\ClassAttendanceForm.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\ClassAttendanceForm.cs [Design]",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\studentview\\ClassAttendanceForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T14:05:50.794Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AvailableClassForm.cs [Design]",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\AvailableClassForm.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\studentview\\AvailableClassForm.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\AvailableClassForm.cs [Design]",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\studentview\\AvailableClassForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:25:23.217Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ClassForm.cs [Design]",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\ClassForm.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\studentview\\ClassForm.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\ClassForm.cs [Design]",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\studentview\\ClassForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T18:01:21.979Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ClassDAO.cs",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\data\\ClassDAO.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\data\\ClassDAO.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\data\\ClassDAO.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\data\\ClassDAO.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAQwHEAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:34:39.102Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ClassService.cs",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\service\\ClassService.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\service\\ClassService.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\service\\ClassService.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\service\\ClassService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:33:47.784Z",
+              "WhenOpened": "2025-09-23T08:54:27.286Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CoursesForm.cs",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\CoursesForm.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\studentview\\CoursesForm.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\CoursesForm.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\studentview\\CoursesForm.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAuwFwAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:23:54.509Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TeachingView.cs [Design]",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\TeachingView.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\TeachingView.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\TeachingView.cs [Design]",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\TeachingView.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:41:31.544Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AvailableClassForm.cs",
-              "DocumentMoniker": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\AvailableClassForm.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\studentview\\AvailableClassForm.cs",
-              "ToolTip": "D:\\DBMS\\Du an\\DBMS\\WindowsFormsApp1\\view\\studentview\\AvailableClassForm.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\studentview\\AvailableClassForm.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:26:33.072Z"
             }
           ]
         }

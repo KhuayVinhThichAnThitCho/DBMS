@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.model;
 using WindowsFormsApp1.view.studentview;
+using WindowsFormsApp1.view.StaffView;
 
 namespace WindowsFormsApp1
 {
@@ -20,7 +21,7 @@ namespace WindowsFormsApp1
         
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EnglishAcademy());
+            Application.Run(new StaffManager());
         }
     }
 }
