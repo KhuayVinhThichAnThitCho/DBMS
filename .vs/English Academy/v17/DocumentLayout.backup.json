@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\DBMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\windowsformsapp1\\view\\staffview\\staffmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\staffview\\staffmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|d:\\dbms\\windowsformsapp1\\view\\staffview\\staffmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\staffview\\staffmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -15,8 +11,8 @@
       "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\data\\staff\\staffdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|d:\\dbms\\windowsformsapp1\\view\\staffview\\salaryview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\staffview\\salaryview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\DBMS\\windowsformsapp1\\view\\staffview\\staffmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\view\\staffview\\staffmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1271A663-CC65-4EE5-82D4-F553C91E41E6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|d:\\dbms\\windowsformsapp1\\view\\staffview\\salaryview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "SalaryView.cs",
               "DocumentMoniker": "D:\\DBMS\\WindowsFormsApp1\\view\\StaffView\\SalaryView.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\StaffView\\SalaryView.cs",
@@ -47,20 +43,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SalaryView.Designer.cs",
-              "DocumentMoniker": "D:\\DBMS\\WindowsFormsApp1\\view\\StaffView\\SalaryView.Designer.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\StaffView\\SalaryView.Designer.cs",
-              "ToolTip": "D:\\DBMS\\WindowsFormsApp1\\view\\StaffView\\SalaryView.Designer.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\view\\StaffView\\SalaryView.Designer.cs",
-              "ViewState": "AgIAAJIBAAAAAAAAAABhwBcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T12:09:04.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "StaffDao.cs",
               "DocumentMoniker": "D:\\DBMS\\WindowsFormsApp1\\data\\Staff\\StaffDao.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\data\\Staff\\StaffDao.cs",
@@ -73,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "StaffManager.cs [Design]",
               "DocumentMoniker": "D:\\DBMS\\WindowsFormsApp1\\view\\StaffView\\StaffManager.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\StaffView\\StaffManager.cs",
@@ -85,13 +68,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "StaffManager.cs",
               "DocumentMoniker": "D:\\DBMS\\WindowsFormsApp1\\view\\StaffView\\StaffManager.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\view\\StaffView\\StaffManager.cs",
               "ToolTip": "D:\\DBMS\\WindowsFormsApp1\\view\\StaffView\\StaffManager.cs",
               "RelativeToolTip": "WindowsFormsApp1\\view\\StaffView\\StaffManager.cs",
-              "ViewState": "AgIAADoBAAAAAAAAAAAjwBYBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACgBAAAAAAAAAAAjwBYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-23T08:54:27.286Z",
               "EditorCaption": ""
